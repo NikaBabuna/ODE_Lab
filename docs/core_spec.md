@@ -1,4 +1,14 @@
-# ODE Lab — Minimal Core Specification
+# Core Specification — ODE Lab
+
+## Role
+
+This document defines the minimal foundation system.
+
+It describes what must exist before expansion begins.
+
+Completion of this specification marks the end of Phase I (Foundation).
+
+---
 
 ## Purpose of the Core
 
@@ -6,179 +16,124 @@ The core is the stable nucleus of ODE Lab.
 
 It must provide:
 
-* a working interactive laboratory
-* a clean solver architecture
-* a stable problem definition system
-* an extensible foundation for future expansion
+- A working interactive laboratory
+- A unified solver architecture
+- A formal problem definition interface
+- A stable execution pipeline
+- A foundation that supports expansion without structural rewrite
 
-After the core is complete and stabilized, all future development must occur **around** it, not through structural rewrites.
-
-The core must be sufficient to support long-term evolution toward the full vision without requiring redesign.
-
----
-
-# Core Design Principles
-
-The core must ensure:
-
-1. New solvers can be added without modifying existing solvers
-2. New simulations can be added without modifying solver code
-3. Visualization can expand without altering numerical core
-4. Execution pipeline remains stable and consistent
-5. System remains understandable and clean
-
-If any future feature requires rewriting core structure, the core is considered incomplete.
+After completion, development must occur around the core, not through redesign.
 
 ---
 
-# Core Components
+## Core Components
 
-## 1. Solver System
-
-The solver system must support multiple solver types through a unified interface.
+### 1. Solver System
 
 Minimum solver set:
 
-* RK4 (fixed-step baseline)
-* RK45 (adaptive step solver with error control)
-* Backward Euler (implicit/stiff baseline)
+- RK4 (fixed-step baseline)
+- RK45 (adaptive solver)
+- Backward Euler (implicit/stiff baseline)
 
 Each solver must:
-
-* conform to common interface
-* operate on generic problem definition
-* return standardized solution object
-* provide diagnostic data (steps, rejects, etc.)
-
-No solver may depend on specific simulations.
+- Conform to a unified interface
+- Operate on generic problem definition
+- Return standardized solution objects
+- Provide diagnostic data
 
 ---
 
-## 2. Problem Definition Interface
-
-A formal abstraction must exist for defining dynamical systems.
+### 2. Problem Definition Interface
 
 Each problem must define:
 
-* state dimension
-* derivative function f(t, y, params)
-* parameter set
-* initial conditions
-* optional event functions
+- State dimension
+- Derivative function f(t, y, params)
+- Parameter set
+- Initial conditions
+- Optional event functions
 
-Problem definitions must be solver-independent.
-
-Adding a new simulation must require only creation of a new problem module.
+Problems must remain solver-independent.
 
 ---
 
-## 3. Execution Engine
+### 3. Execution Engine
 
-A unified execution pipeline must exist:
+Unified execution interface:
 
 solve(problem, solver, config) → solution
 
-Where solution contains:
+Solution must contain:
+- Time values
+- State values
+- Diagnostics
+- Event results (if applicable)
 
-* time values
-* state values
-* solver diagnostics
-* event results if applicable
-
-Execution must be deterministic and solver-agnostic.
-
-No UI or visualization logic in core engine.
+Core engine must not depend on UI.
 
 ---
 
-## 4. Event System
+### 4. Event System
 
-Core must support event detection.
-
-Minimum requirement:
-
-* zero-crossing detection
-* ability to stop integration on event
-* accurate event time approximation
-
-This validates extensibility for future advanced features.
+Minimum support:
+- Zero-crossing detection
+- Stop-on-event capability
+- Accurate event time approximation
 
 ---
 
-## 5. Visualization Interface (Minimal Lab)
+### 5. Minimal Interactive Lab
 
-Core must include a minimal interactive interface allowing:
+Must allow:
 
-* selection of simulation
-* selection of solver
-* parameter adjustment
-* execution of simulation
-* visualization of results
+- Selection of simulation
+- Selection of solver
+- Parameter adjustment
+- Execution
+- Visualization of results
 
 Required visualizations:
+- Time-series plots
+- Phase plots
+- Basic solver diagnostics
 
-* time-series plots
-* phase plots (where applicable)
-* basic solver diagnostics display
-
-Interface must remain thin and separate from numerical core.
-
-Purpose is usability and validation, not visual sophistication.
+UI must remain thin and separate from core.
 
 ---
 
-## 6. Initial Simulation Set
+### 6. Initial Simulation Set
 
-Core must include a small curated set of systems:
+Core includes:
 
-* Projectile with event detection
-* Pendulum
-* Lorenz attractor
-* Van der Pol oscillator
-
-These provide coverage for:
-
-* events
-* chaos
-* stiffness
-* periodic systems
-
-Additional simulations belong to expansion phase.
+- Projectile with event detection
+- Pendulum
+- Lorenz attractor
+- Van der Pol oscillator
 
 ---
 
-# Explicitly Excluded from Core
+## Explicitly Excluded from Core
 
-The following are not part of core and must not delay completion:
+- BVP solvers
+- Symplectic methods
+- DSL / scripting system
+- Advanced visualization tools
+- Performance optimization
+- Plugin auto-discovery
 
-* BVP solvers
-* Symplectic integrators
-* Custom scripting or DSL
-* Advanced visualization tools
-* Performance optimization
-* Plugin auto-discovery systems
-* Large simulation libraries
-* Public packaging concerns
-
-These belong to expansion phase.
+These belong to Phase III.
 
 ---
 
-# Definition of Core Completion
+## Definition of Core Completion
 
-The core is complete when:
+Core is complete when:
 
-* Multiple solver types operate through unified interface
-* Simulations run correctly across different solvers
-* Events function correctly
-* Results can be visualized interactively
-* New solver can be added without modifying existing code
-* New simulation can be added without modifying solver code
-* System is stable, clean, and understandable
-
-At this point:
-
-Phase I (Foundation) ends
-Phase II (Stabilization) begins
-
-All future development becomes expansion around a stable nucleus.
+- Multiple solver types operate under unified interface
+- Simulations run correctly across solvers
+- Events function correctly
+- Visualization works
+- New solver can be added without modifying existing ones
+- New simulation can be added without modifying solver code
+- System is stable and understandable
