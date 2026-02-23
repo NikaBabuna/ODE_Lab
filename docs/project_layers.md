@@ -2,55 +2,74 @@
 
 ## Purpose
 
-This document defines the abstraction layers of the ODE Lab project.
+This document defines the structural layers of the ODE Lab project and explains how they interact.
 
-Its purpose is to clarify:
-- Where decisions belong
-- How documents relate to one another
-- How abstraction flows into execution
-- What changes frequently and what must remain stable
+It provides a clear top-down model from abstract doctrine to daily implementation.
+Its purpose is to ensure clarity, prevent overlap between documents, and maintain a stable development structure.
 
-This structure prevents overlap, drift, and structural confusion.
+Each layer has a distinct responsibility.
+Each lower layer operates within the constraints of the layers above it.
 
 ---
 
-# Layer 1 — Foundational Doctrine
+# System Overview
+
+ODE Lab is organized as a layered project system.
+
+From highest abstraction to lowest execution:
+
+Layer 1 — Doctrine (Operating Environment)
+Layer 2 — System Definition
+Layer 3 — Operational Strategy
+Layer 4 — Execution
+Layer 5 — Daily Implementation
+
+These layers form a closed and consistent structure.
+
+Higher layers define constraints.
+Lower layers define action.
+
+---
+
+# Layer 1 — Doctrine (Operating Environment)
 
 ## Role
 
-Defines the identity and governing laws of the project.
+Defines the identity, rules, and long-term direction of the project.
 
-This layer establishes:
-- Purpose
-- Scope
-- Quality standards
-- Architectural principles
-- Growth philosophy
-- Personal engineering discipline
-
-It defines the “physics” of the project.
+This layer establishes the environment in which all work occurs.
+It functions as the governing framework of the system.
 
 ## Documents
 
-- Workflow Bible
-- Project Constitution
-- Vision
-- Evolution Strategy
+* Workflow Bible
+* Project Constitution
+* Vision
+* Evolution Strategy
+
+## Responsibilities
+
+Defines:
+
+* Why the project exists
+* What it is allowed to be
+* Quality standards
+* Architectural principles
+* Personal engineering discipline
+* Long-term direction
+* Phase-based evolution model
 
 ## Characteristics
 
-- Rarely modified
-- High abstraction
-- Governs all lower layers
-- Independent of specific features
+* Highest level of abstraction
+* Rarely modified
+* Independent of implementation details
+* Governs all lower layers
 
-## Answers
+## Purpose in the System
 
-- Why does this project exist?
-- What is it allowed to be?
-- What are its long-term intentions?
-- How does it grow?
-- How is work performed?
+This layer creates a stable operating environment.
+It ensures that all future decisions remain aligned and coherent.
 
 ---
 
@@ -58,114 +77,199 @@ It defines the “physics” of the project.
 
 ## Role
 
-Defines the concrete system that must be built before expansion begins.
+Defines the concrete system that must be built within the doctrine.
 
-This layer translates vision into a minimal structural design.
-
-## Documents
-
-- Core Specification
-
-## Characteristics
-
-- Stable once defined
-- Defines architectural boundaries of the foundation
-- Must comply with Layer 1
-
-## Answers
-
-- What must exist before expansion?
-- What is the minimal nucleus of the system?
-- What capabilities are required in the foundation?
-
----
-
-# Layer 3 — Execution Strategy (Phase I Only)
-
-## Role
-
-Defines how the core system will be constructed.
-
-This layer exists only during Phase I (Foundation).
+This layer translates abstract vision into a minimal structural reality.
 
 ## Documents
 
-- Core Roadmap
-- Core Progress Tracker
+* Core Specification
+
+## Responsibilities
+
+Defines:
+
+* The minimal nucleus of the system
+* Required core capabilities
+* What must exist before expansion begins
+* What is explicitly excluded from the core
+* Criteria for core completion
 
 ## Characteristics
 
-- Temporary
-- Ordered and milestone-driven
-- Removed or archived after core completion
-- Must comply with Layers 1 and 2
+* Stable once defined
+* Rarely modified
+* Must comply with Doctrine (Layer 1)
 
-## Answers
+## Purpose in the System
 
-- In what sequence is the core built?
-- What are the milestones?
-- What is the current progress?
+This layer defines the foundation around which all future expansion occurs.
+It ensures that development has a clear structural target.
 
 ---
 
-# Layer 4 — Daily Execution
+# Layer 3 — Operational Strategy
 
 ## Role
 
-Defines immediate work and operational tasks.
+Defines how development operates within each evolution phase.
 
-This layer represents active implementation.
+This layer translates high-level evolution into concrete operating rules.
+
+## Documents
+
+* Operational Strategy
+* Feature Implementation Protocol (Phase III)
+
+## Responsibilities
+
+Defines:
+
+* How work is conducted in each phase
+* Rules of engagement during development
+* How features are selected and implemented
+* How transitions between phases occur
+* How expansion is controlled
+
+## Phase Behavior
+
+Phase I — Foundation
+Strict roadmap-driven construction.
+
+Phase II — Stabilization
+Formal refinement and cleanup.
+
+Phase III — Controlled Expansion
+Backlog-driven, single-feature iterative development.
+
+## Characteristics
+
+* Stable and procedural
+* Applies throughout project life
+* Must comply with Layers 1 and 2
+
+## Purpose in the System
+
+This layer ensures disciplined movement through phases and prevents chaos during expansion.
+
+---
+
+# Layer 4 — Execution
+
+## Role
+
+Defines structured execution within a phase.
+
+This layer contains concrete plans and progress tracking.
+
+## Documents
+
+During Phase I:
+
+* Core Roadmap
+* Core Progress Tracker
+
+During Phase III:
+
+* Feature backlog
+
+## Responsibilities
+
+Defines:
+
+* Sequence of work
+* Milestones
+* Current progress
+* Feature queue (Phase III)
+
+## Characteristics
+
+* Changes as work progresses
+* Exists only to support execution
+* Archived or replaced when phase changes
+
+## Purpose in the System
+
+This layer turns strategy into actionable structure.
+It provides direction without redefining doctrine or architecture.
+
+---
+
+# Layer 5 — Daily Implementation
+
+## Role
+
+Represents active engineering work.
+
+This is the operational surface where coding occurs.
 
 ## Artifacts
 
-- Task lists
-- Scratch notes
-- Temporary design notes
-- Experimental code
+* Task lists
+* Scratch notes
+* Temporary design notes
+* Experimental code
 
 ## Characteristics
 
-- Continuously changing
-- Ephemeral
-- Lowest abstraction
-- Constrained by all higher layers
+* Continuously changing
+* Ephemeral
+* Lowest level of abstraction
+* Constrained by all higher layers
 
-## Answers
+## Purpose in the System
 
-- What am I building right now?
-- What is the next small step?
+This layer converts structured plans into working software.
+
+It is flexible and adaptive but must remain aligned with all higher layers.
 
 ---
 
-# Layer Interaction Rules
+# Interaction Rules
 
 1. Lower layers must never contradict higher layers.
 2. Higher layers must not micromanage lower layers.
-3. Changes to Layer 1 require deliberate reconsideration.
-4. Layer 3 is temporary and ends after core completion.
-5. Layer 4 is allowed to be flexible and adaptive.
+3. Each document must belong clearly to one layer.
+4. Structural decisions belong in higher layers.
+5. Implementation decisions belong in lower layers.
 
 ---
 
-# Abstraction Flow
+# Flow of Control
 
-Foundational Doctrine
-    ↓
+Doctrine
+→ defines environment and limits
+
 System Definition
-    ↓
-Execution Strategy
-    ↓
-Daily Execution
+→ defines the core system
 
-Decisions must move downward through this hierarchy.
+Operational Strategy
+→ defines how development proceeds
+
+Execution
+→ defines current plan and sequence
+
+Daily Implementation
+→ produces working code
+
+All decisions must flow downward through this structure.
 
 ---
 
 # Stability Model
 
-Layer 1 — Almost never changes  
-Layer 2 — Changes rarely  
-Layer 3 — Exists only during core construction  
-Layer 4 — Changes constantly  
+Layer 1 — Almost never changes
+Layer 2 — Rarely changes
+Layer 3 — Stable procedural rules
+Layer 4 — Changes per phase
+Layer 5 — Changes constantly
 
-This separation preserves structural clarity and prevents chaos.
+This separation preserves clarity and prevents structural drift.
+
+---
+
+# Final Principle
+
+Clarity at higher layers enables freedom at lower layers.
+
+The purpose of this layered system is to allow disciplined construction of the core and controlled expansion afterward without confusion or structural decay.
