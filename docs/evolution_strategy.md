@@ -1,207 +1,93 @@
-# ODE Lab — Evolution Strategy
+# Evolution Strategy — ODE Lab
 
-### System Growth and Development Doctrine
+## Growth Philosophy
 
-This document defines how ODE Lab evolves over time.
-It governs expansion, refactoring, versioning, and feature introduction.
+Development follows a hybrid model:
 
-All development must follow this strategy to ensure clarity, stability, and sustained progress.
+Phase I — Careful foundational construction
+Phase II — Stabilization and refinement
+Phase III — Controlled expansion
 
----
-
-# 1. Core Philosophy of Growth
-
-ODE Lab will follow a **hybrid growth model**:
-
-**Phase 1 — Cathedral Construction**
-The foundational system is built slowly, deliberately, and cleanly.
-Architecture, solver engine, and extensibility are prioritized over expansion.
-
-**Phase 2 — Living System Expansion**
-Once the core is stable and extensible, the system will grow steadily through new solvers, simulations, and capabilities.
-
-This ensures:
-
-* Strong foundations
-* Clean architecture
-* Sustainable long-term evolution
-
-Speed is secondary to structural integrity.
+The system must begin minimal, clean, and usable before expanding.
 
 ---
 
-# 2. Development Phases
-
-## Phase I — Foundational System (v1 series)
-
-Goal: Build a minimal but fully usable computational laboratory with strong architecture.
+## Phase I: Foundational System
 
 Focus:
 
 * Core solver engine
-* Stable unified interfaces
-* Plugin architecture for solvers and simulations
-* Small curated simulation set
-* Basic but clean interactive interface
+* Unified interfaces
+* Plugin architecture
+* Small curated simulations
+* Clean interactive interface
 * Strong testing and documentation
 
-Rules:
+No uncontrolled feature expansion permitted.
 
-* No uncontrolled expansion
-* No feature creep
-* No experimental subsystems on main branch
-* Architecture must remain clean and extensible
-
-This phase ends when:
-
-* Core architecture feels stable
-* New solvers/simulations can be added cleanly
-* System is usable and demonstrable
-* Codebase reflects professional quality
+This phase ends when the system is stable, extensible, and usable.
 
 ---
 
-## Phase II — Stabilization and Refinement
-
-Goal: Ensure the foundation is robust before expansion.
+## Phase II: Stabilization
 
 Focus:
 
-* Refactoring for clarity and consistency
-* Improving documentation
+* Refactoring for clarity
 * Strengthening tests
-* Performance sanity improvements
-* Ensuring extensibility works in practice
+* Improving documentation
+* Confirming extensibility
 
-No major new features added unless required to complete the core vision.
-
-This phase ensures the system can grow safely.
+No major expansion until foundation is solid.
 
 ---
 
-## Phase III — Structured Expansion
+## Phase III: Expansion
 
-Goal: Gradual expansion into full ODE Lab vision.
+Gradual addition of:
 
-Possible additions:
+* Additional solvers
+* Advanced visualization
+* Custom simulation definition tools
+* Diagnostic and comparison features
 
-* Additional solver families
-* Advanced visualization tools
-* Simulation DSL / programmable environment
-* Solver comparison tools
-* Advanced diagnostics
-* Additional system libraries
-
-All expansion must:
-
-* Respect architecture
-* Follow plugin principles
-* Maintain cleanliness and stability
-
-Expansion is continuous but controlled.
+All expansion must respect architecture and clarity.
 
 ---
 
-# 3. Feature Introduction Rules
+## Feature Introduction Rules
 
-New features may only be introduced when:
+New features only added when:
 
-1. They align with project vision and constitution
-2. They do not compromise architectural clarity
-3. Core system remains stable
-4. They are scheduled intentionally
+* Aligned with vision
+* Architecturally consistent
+* Intentionally planned
 
-Spontaneous feature additions are not permitted.
+Spontaneous additions are not allowed.
 
-All new ideas must be recorded and evaluated before implementation.
-
----
-
-# 4. Idea Management
-
-All new ideas, features, or experiments must be placed into an **Idea Parking List**.
-
-Rules:
-
-* Ideas are written down immediately
-* They are not implemented immediately
-* They are reviewed during planning sessions
-* Only selected ideas enter roadmap
-
-This prevents uncontrolled expansion and preserves focus.
+All ideas go to a recorded idea list for later review.
 
 ---
 
-# 5. Refactoring Policy
+## Refactoring Policy
 
-Refactoring follows a scheduled discipline.
-
-When imperfections are noticed:
-
-* Record them
-* Continue current work if not blocking
-* Address during dedicated refactoring passes
-
-Immediate refactoring only occurs if:
-
-* It blocks current development
-* It risks architectural damage
-* It compromises clarity significantly
-
-Otherwise, refactoring is intentional and controlled.
+Imperfections are recorded and addressed deliberately.
+Immediate refactoring only when blocking or damaging.
 
 ---
 
-# 6. Versioning Mindset
+## Versioning
 
-ODE Lab will follow a **professional but practical versioning model**.
-
-* Clear version progression (v0.x → v1 → future)
-* Stable main branch
-* Each version represents a coherent state
-* Releases reflect meaningful progress
-
-The project is both a personal system and a professional artifact.
-
-Versioning should reflect engineering maturity without unnecessary overhead.
+Project progresses through clear, stable versions.
+Each version represents a coherent and usable state.
 
 ---
 
-# 7. Expansion Discipline
+## Guiding Principle
 
-All expansion must be intentional.
-
-Rules:
-
-* No spontaneous feature implementation
-* No impulsive architectural changes
-* All new capabilities must align with roadmap
-* Expansion occurs only after stability
-
-Focus is preserved through disciplined scope control.
-
----
-
-# 8. Definition of Maturity
-
-ODE Lab reaches mature state when:
-
-* Core numerical engine is complete and extensible
-* Interactive lab environment exists
-* Multiple solvers and systems operate cleanly
-* Custom simulation definition is supported
-* Architecture remains clean and understandable
-* System feels like a true computational laboratory
-
-At maturity, the system becomes a long-term expandable personal tool and professional showcase.
-
----
-
-# 9. Guiding Principle
-
-Build slowly.
-Stabilize deliberately.
+Build minimal.
+Stabilize fully.
 Expand intentionally.
 
-ODE Lab must grow like a well-engineered instrument —
-never rushed, never chaotic, always structured.
+The system must grow like a well-engineered instrument.
+
