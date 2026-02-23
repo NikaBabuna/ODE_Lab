@@ -1,105 +1,85 @@
 # Workflow Bible — Personal Engineering Doctrine
 
-## Purpose
+## Role
 
 This document defines how development work is performed on ODE Lab.
-It governs discipline, task execution, and daily engineering behavior.
 
-It does not define project scope or architecture.
-It defines how work is done.
+It governs discipline, task execution, and engineering behavior.
+It does not define project scope, architecture, or long-term direction.
+
+Those are defined in:
+- Project Constitution
+- Vision
+- Evolution Strategy
+- Core Specification
 
 ---
 
-## Core Principles
+## Guiding Principle
 
-### Build for Understanding
+Work deliberately. Build cleanly. Understand completely.
 
-All code must be written with full comprehension.
-No blind copying or opaque implementation is allowed.
+---
 
-Understanding takes priority over speed.
+## Core Rules
 
-### Incremental Construction
+### 1. Build for Understanding
+All code must be fully understood.
+Blind copying or opaque implementation is forbidden.
 
-All work is performed in small, isolated tasks.
-Large changes are divided into clear steps with verifiable outcomes.
+External references may be used, but implementations must be owned.
 
-### Clean State Policy
+### 2. Incremental Construction
+All development is performed in small, isolated tasks.
+Large changes must be divided into verifiable steps.
 
-Code must remain clean and readable at all times.
-No intentional accumulation of messy or temporary structures.
+### 3. Clean State Policy
+The repository must remain clean at all times.
+No intentional accumulation of temporary or messy structures.
 
-### Test Before Trust
-
-All numerical behavior must be verified through tests or experiments.
+### 4. Test Before Trust
+Numerical behavior must be validated.
 Visual correctness alone is insufficient.
 
 ---
 
 ## Task Execution Cycle
 
-Each task follows this sequence:
+Each task must follow:
 
-1. Understand goal and constraints
+1. Clarify objective
 2. Design approach briefly
 3. Implement clearly
-4. Test and verify behavior
+4. Verify with tests or experiments
 5. Refactor for clarity
 6. Commit in clean state
-
-No uncontrolled coding is allowed.
 
 ---
 
 ## Task Size Standard
 
-Tasks must be small and well-defined.
-A task should typically be completable in one focused session.
-
-Large features must be divided into smaller steps.
+Tasks should be completable within one focused session.
+Large features must be decomposed.
 
 ---
 
 ## Commit Discipline
 
 Commits must:
-
-* Represent meaningful progress
-* Leave repository in clean state
-* Use clear descriptive messages
-* Avoid mixing unrelated changes
+- Represent meaningful progress
+- Leave the repository stable
+- Avoid mixing unrelated changes
+- Use clear descriptive messages
 
 Main branch must remain stable.
 
 ---
 
-## Testing Discipline
+## Session Closure Rule
 
-Core numerical code requires:
-
-* Analytical or reference validation
-* Behavioral verification
-* Regression protection where appropriate
-
-Untested core logic is considered incomplete.
-
----
-
-## Session Rhythm
-
-Each work session:
-
-* Select one defined task
-* Complete full execution cycle
-* Leave system clean and stable
+Each session must end with:
+- Clean code
+- Passing tests
+- Clear next task defined
 
 Consistency is prioritized over intensity.
-
----
-
-## Guiding Rule
-
-Work calmly, deliberately, and cleanly.
-
-Each session should move the system forward
-while strengthening engineering discipline.
