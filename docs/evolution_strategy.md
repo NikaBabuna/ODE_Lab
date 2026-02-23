@@ -1,85 +1,90 @@
 # Evolution Strategy — ODE Lab
 
-## Growth Philosophy
+## Role
 
-Development follows a hybrid model:
+This document defines how ODE Lab grows over time.
 
-Phase I — Careful foundational construction
-Phase II — Stabilization and refinement
-Phase III — Controlled expansion
+It governs phases of development, expansion control, and structural stability.
 
-The system must begin minimal, clean, and usable before expanding.
+Foundation definition is described in Core Specification.
+Long-term direction is described in Vision.
 
 ---
 
-## Phase I: Foundational System
+## Growth Model
+
+Development follows three phases:
+
+Phase I — Foundation  
+Phase II — Stabilization  
+Phase III — Controlled Expansion  
+
+---
+
+## Phase I — Foundation
+
+Goal:
+Build a minimal, usable, architecturally sound core.
 
 Focus:
+- Solver engine
+- Unified interfaces
+- Extensibility foundation
+- Minimal interactive lab
+- Strong testing
 
-* Core solver engine
-* Unified interfaces
-* Plugin architecture
-* Small curated simulations
-* Clean interactive interface
-* Strong testing and documentation
-
-No uncontrolled feature expansion permitted.
-
-This phase ends when the system is stable, extensible, and usable.
+Completion criteria are defined in Core Specification.
 
 ---
 
-## Phase II: Stabilization
+## Phase II — Stabilization
+
+Goal:
+Strengthen and clean the foundation before expansion.
 
 Focus:
+- Refactoring for clarity
+- Strengthening tests
+- Improving documentation
+- Verifying extensibility
 
-* Refactoring for clarity
-* Strengthening tests
-* Improving documentation
-* Confirming extensibility
-
-No major expansion until foundation is solid.
+No major new features introduced in this phase.
 
 ---
 
-## Phase III: Expansion
+## Phase III — Controlled Expansion
 
-Gradual addition of:
+Goal:
+Grow system toward Vision without compromising architecture.
 
-* Additional solvers
-* Advanced visualization
-* Custom simulation definition tools
-* Diagnostic and comparison features
+Expansion may include:
+- Additional solvers
+- Advanced visualization
+- Custom system definition tools
+- Diagnostics and comparison features
 
-All expansion must respect architecture and clarity.
+All expansion must:
+- Respect architecture
+- Align with Vision
+- Follow Constitution
 
 ---
 
 ## Feature Introduction Rules
 
-New features only added when:
+New features must be:
+- Intentionally planned
+- Architecturally consistent
+- Aligned with Vision
 
-* Aligned with vision
-* Architecturally consistent
-* Intentionally planned
-
-Spontaneous additions are not allowed.
-
-All ideas go to a recorded idea list for later review.
+Spontaneous additions are not permitted.
 
 ---
 
 ## Refactoring Policy
 
 Imperfections are recorded and addressed deliberately.
-Immediate refactoring only when blocking or damaging.
-
----
-
-## Versioning
-
-Project progresses through clear, stable versions.
-Each version represents a coherent and usable state.
+Immediate refactoring only when blocking or structurally damaging.
 
 ---
 
@@ -88,6 +93,3 @@ Each version represents a coherent and usable state.
 Build minimal.
 Stabilize fully.
 Expand intentionally.
-
-The system must grow like a well-engineered instrument.
-
